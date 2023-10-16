@@ -1,24 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, intital-scale=1.0">
-        <script src="js/client.js"></script>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <nav>
-            <img class="logo"  src="chat.png" alt="">
-        </nav>
-        <div class="container">
-            <div class="message right">Harshan: hey how are you?</div>
-        <div class="message left">Nani: iam fine. how about you</div>
-        </div>
-        <div class="send">
-            <from action="#" id="send-container">
-                <input type="text" name="messageInp" id="messageInp">
-                <button class="btn" type="submit">send</button>
-            </from>
-        </div>
-    </head>
+<html>
+<head>
+    <title>Simple Chat</title>
+    <style>
+        /* CSS for chat container */
+        .chat-container {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        /* CSS for chat messages */
+        .chat-message {
+            margin: 10px;
+            padding: 5px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+        }
+
+        /* CSS for user input */
+        .user-input {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div id="chat-messages"></div>
+        <input type="text" id="user-input" class="user-input" placeholder="Type a message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        // JavaScript for sending a message
+        function sendMessage() {
+            var userInput = document.getElementById("user-input");
+            var message = userInput.value;
+            userInput.value = "";
+
+            if (message.trim() !== "") {
+                var chatMessages = document.getElementById("chat-messages");
+                var newMessage = document.createElement("div");
+                newMessage.className = "chat-message";
+                newMessage.textContent = message;
+                chatMessages.appendChild(newMessage);
+            }
+        }
+    </script>
+</body>
 </html>
