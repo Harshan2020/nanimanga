@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div class="chat-container">
-        <div class="chat">
-            <div class="messages" id="messages">
-                <!-- Messages will be displayed here -->
-            </div>
-            <input type="text" id="messageInput" placeholder="Type your message">
-            <button id="sendButton">Send</button>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intital-scale=1.0">
+        <script src="js/client.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <nav>
+            <img class="logo"  src="chat.png" alt="">
+        </nav>
+        <div class="container">
+            <div class="message right">Harshan: hey how are you?</div>
+        <div class="message left">Nani: iam fine. how about you</div>
         </div>
-    </div>
-    <script src="app.js"></script>
-</body>
+        <div class="send">
+            <from action="#" id="send-container">
+                <input type="text" name="messageInp" id="messageInp">
+                <button class="btn" type="submit">send</button>
+            </from>
+        </div>
+    </head>
 </html>
